@@ -1,0 +1,11 @@
+#Compiled sources
+*.jar
+*.class
+
+
+#Specific folders
+.settings
+
+#Specific files
+.classpath
+.project
