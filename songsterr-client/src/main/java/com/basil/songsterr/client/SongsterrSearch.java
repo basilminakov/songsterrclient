@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.basil.songsterr.client;
 
 
@@ -29,7 +25,7 @@ public class SongsterrSearch extends Application {
             root = FXMLLoader.load(getClass()
                     .getResource("ui/SearchForm.fxml"));
         } catch (Exception ex) {
-            showMessage(ex.getLocalizedMessage());
+            showMessage(ex.getLocalizedMessage(), "Exception");
         }
         if (root != null) {
             Scene scene = new Scene(root, 600, 426);
@@ -54,12 +50,15 @@ public class SongsterrSearch extends Application {
         launch(args);
     }
     
-    public static void showMessage(String message) {
+    public static void showMessage(String message, String title) {
         Stage dialogStage = new Stage();
         dialogStage.initModality(Modality.WINDOW_MODAL);
         dialogStage.setScene(new Scene(VBoxBuilder.create()
             .children(new Text(message))
             .alignment(Pos.CENTER).padding(new Insets(5)).build()));
+        dialogStage.setTitle(title);
+        dialogStage.setWidth(400);
+        dialogStage.setHeight(150);
         dialogStage.show();
     }
 }
