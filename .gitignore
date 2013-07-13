@@ -5,6 +5,7 @@
 
 #Specific folders
 .settings
+.idea
 
 #Specific files
 .classpath
