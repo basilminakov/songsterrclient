@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.web.*?>
+
+<AnchorPane id="AnchorPane" fx:id="container" prefHeight="426.0" prefWidth="600.0" styleClass="containerNode" xmlns:fx="http://javafx.com/fxml" fx:controller="songsterrsearch.ui.SearchFormController">
+  <children>
+    <SplitPane fx:id="pane" dividerPositions="0.4982456140350877" focusTraversable="true" layoutX="14.0" layoutY="14.0" prefHeight="372.0" prefWidth="572.0">
+      <items>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+          <children>
+            <Accordion id="accordion" fx:id="paramAccordion" prefHeight="312.0" prefWidth="281.0">
+              <effect>
+                <DropShadow color="#293300" />
+              </effect>
+              <expandedPane>
+                <TitledPane fx:id="artistPane" animated="true" text="Поиск по исполнителю">
+                  <content>
+                    <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                      <children>
+                        <TextField fx:id="artistName" layoutX="39.0" layoutY="62.0" prefWidth="200.0" promptText="Название исполнителя">
+                          <effect>
+                            <DropShadow />
+                          </effect>
+                        </TextField>
+                        <ComboBox fx:id="artistCombo" layoutX="53.0" layoutY="134.0" prefHeight="21.0" prefWidth="171.0" promptText="Выберите инструмент">
+                          <effect>
+                            <DropShadow />
+                          </effect>
+                          <items>
+                            <FXCollections fx:factory="observableArrayList">
+                              <String fx:value="Item 1" />
+                            </FXCollections>
+                          </items>
+                        </ComboBox>
+                      </children>
+                    </AnchorPane>
+                  </content>
+                </TitledPane>
+              </expandedPane>
+              <panes>
+                <TitledPane fx:id="songPane" prefHeight="148.0" text="Поиск по композиции">
+                  <content>
+                    <AnchorPane id="Content" fx:id="tabItem" minHeight="0.0" minWidth="0.0" prefHeight="92.0" prefWidth="277.0">
+                      <children>
+                        <ComboBox fx:id="songCombo" layoutX="53.0" layoutY="134.0" prefHeight="21.0" prefWidth="171.0" promptText="Выберите инструмент">
+                          <effect>
+                            <DropShadow />
+                          </effect>
+                          <items>
+                            <FXCollections fx:factory="observableArrayList">
+                              <String fx:value="Item 1" />
+                            </FXCollections>
+                          </items>
+                        </ComboBox>
+                        <TextField id="songId" fx:id="songName" layoutX="39.0" layoutY="62.0" prefWidth="200.0" promptText="Название композиции">
+                          <effect>
+                            <DropShadow />
+                          </effect>
+                        </TextField>
+                      </children>
+                    </AnchorPane>
+                  </content>
+                </TitledPane>
+                <fx:reference source="artistPane" />
+                <TitledPane fx:id="searchPane" animated="false" disable="true" text="Смешанный поиск">
+                  <content>
+                    <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  </content>
+                </TitledPane>
+              </panes>
+            </Accordion>
+            <Button id="btn" fx:id="searchButton" contentDisplay="CENTER" defaultButton="true" layoutX="113.0" layoutY="329.0" mnemonicParsing="false" onAction="#doSearch" text="Искать" />
+          </children>
+        </AnchorPane>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+          <children>
+            <WebView fx:id="view" prefHeight="370.0" prefWidth="283.0" />
+          </children>
+        </AnchorPane>
+      </items>
+    </SplitPane>
+    <Hyperlink id="closeLink" layoutX="535.0" layoutY="394.0" onAction="#doClose" text="Закрыть" textAlignment="CENTER" textFill="#0021cc" underline="true" />
+  </children>
+  <padding>
+    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+  </padding>
+  <stylesheets>
+    <URL value="@searchform.css" />
+  </stylesheets>
+</AnchorPane>
