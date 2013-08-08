@@ -1,6 +1,7 @@
 package com.basil.songsterr.client;
 
 
+import com.basil.songsterr.client.search.ui.SearchFormController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
@@ -21,17 +22,15 @@ public class SongsterrSearch extends Application {
     @Override
     public void start(Stage primaryStage) {
         Parent root = null;
+        FXMLLoader loader = new FXMLLoader(SearchFormController.class.getResource("fxml/SearchForm.fxml"));
         try {
-            root = FXMLLoader.load(getClass()
-                    .getResource("ui/SearchForm.fxml"));
+            root = (Parent)loader.load();
         } catch (Exception ex) {
             showMessage(ex.getLocalizedMessage(), "Exception");
         }
         if (root != null) {
             Scene scene = new Scene(root, 600, 426);
-            scene.getStylesheets()
-                    .add(getClass()
-                    .getResource("ui/searchform.css").toExternalForm());
+            scene.getStylesheets().add(SearchFormController.class.getResource("styles/searchform.css").toExternalForm());
             primaryStage.setTitle("Songsterr search");
             primaryStage.setScene(scene);
             primaryStage.show();

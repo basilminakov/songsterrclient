@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.web.*?>
 
-<AnchorPane id="AnchorPane" fx:id="container" prefHeight="426.0" prefWidth="600.0" styleClass="containerNode" xmlns:fx="http://javafx.com/fxml" fx:controller="songsterrsearch.ui.SearchFormController">
+<AnchorPane id="AnchorPane" fx:id="container" prefHeight="426.0" prefWidth="600.0" styleClass="containerNode" xmlns:fx="http://javafx.com/fxml" fx:controller="com.basil.songsterr.client.search.ui.SearchFormController">
   <children>
     <SplitPane fx:id="pane" dividerPositions="0.4982456140350877" focusTraversable="true" layoutX="14.0" layoutY="14.0" prefHeight="372.0" prefWidth="572.0">
       <items>
@@ -94,6 +94,6 @@
     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
   </padding>
   <stylesheets>
-    <URL value="@searchform.css" />
+    <URL value="@../styles/searchform.css" />
   </stylesheets>
 </AnchorPane>
